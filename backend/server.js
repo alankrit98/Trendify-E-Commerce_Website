@@ -14,11 +14,15 @@ const port = process.env.PORT || 4000
 connectDB()
 connectCloudinary()
 
+const corsOptions = {
+    origin: 'https://trendify-frontend-gamma.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    credentials: true
+};
+
 //Middlewares
 app.use(express.json())
-app.use(cors({
-    origin: "*"
-}))
+app.use(cors(corsOptions));
 
 // api endpoints
 app.use('/api/user', userRouter)
