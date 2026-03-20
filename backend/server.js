@@ -15,7 +15,7 @@ connectDB()
 connectCloudinary()
 
 const corsOptions = {
-    origin: 'https://trendify-frontend-gamma.vercel.app',
+    origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true
 };
